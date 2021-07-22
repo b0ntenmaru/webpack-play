@@ -2,7 +2,7 @@
   "name": "webpack-play",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.ts",
   "scripts": {
     "build": "webpack",
     "watch": "webpack -w",
