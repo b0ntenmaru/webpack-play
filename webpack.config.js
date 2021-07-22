@@ -8,5 +8,10 @@ module.exports = {
   output: {
     path: `${__dirname}/dist`,
     filename: 'main.js',
+  },
+
+  devServer: {
+    contentBase: 'dist',
+    open: true
   }
 };
