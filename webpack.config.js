@@ -1,3 +1,5 @@
+const { VueLoaderPlugin } = require('vue-loader')
+
 module.exports = {
   entry: './src/main.ts',
 
@@ -9,8 +11,15 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        use: 'ts-loader',
-      }
+        loader: 'ts-loader',
+        options: {
+          appendTsSuffixTo: [/\.vue$/],
+        },
+      },
+      {
+        test: /\.vue$/,
+        use: 'vue-loader',
+      },
     ],
   },
 
@@ -18,7 +27,14 @@ module.exports = {
     extensions: [
       '.ts', '.js'
     ],
+
+    alias: {
+      vue: "vue/dist/vue.js"
+    }
   },
+
+  // ES5(IE11等)向けの指定（webpack 5以上で必要）
+  target: ["web", "es5"],
 
   output: {
     path: `${__dirname}/public`,
@@ -28,5 +44,10 @@ module.exports = {
   devServer: {
     contentBase: 'public',
     open: true
-  }
+  },
+
+  plugins: [
+    // make sure to include the plugin!
+    new VueLoaderPlugin()
+  ]
 };
