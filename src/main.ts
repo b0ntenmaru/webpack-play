@@ -1,4 +1,7 @@
-import { hello } from './sub';
+import Vue from 'vue';
+import App from './App.vue';
 
-hello();
-console.log('hoge');
+
+new Vue({
+  render: (h) => h(App),
+}).$mount('#app');
