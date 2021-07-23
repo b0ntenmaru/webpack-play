@@ -18,7 +18,14 @@ module.exports = {
     extensions: [
       '.ts', '.js'
     ],
+
+    alias: {
+      vue: "vue/dist/vue.js"
+    }
   },
+
+  // ES5(IE11等)向けの指定（webpack 5以上で必要）
+  target: ["web", "es5"],
 
   output: {
     path: `${__dirname}/public`,
