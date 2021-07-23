@@ -21,12 +21,12 @@ module.exports = {
   },
 
   output: {
-    path: `${__dirname}/dist`,
+    path: `${__dirname}/public`,
     filename: 'main.js',
   },
 
   devServer: {
-    contentBase: 'dist',
+    contentBase: 'public',
     open: true
   }
 };
