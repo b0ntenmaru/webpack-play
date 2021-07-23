@@ -1,3 +1,5 @@
+const { VueLoaderPlugin } = require('vue-loader')
+
 module.exports = {
   entry: './src/main.ts',
 
@@ -10,7 +12,11 @@ module.exports = {
       {
         test: /\.ts$/,
         use: 'ts-loader',
-      }
+      },
+      {
+        test: /\.vue$/,
+        use: 'vue-loader',
+      },
     ],
   },
 
@@ -35,5 +41,10 @@ module.exports = {
   devServer: {
     contentBase: 'public',
     open: true
-  }
+  },
+
+  plugins: [
+    // make sure to include the plugin!
+    new VueLoaderPlugin()
+  ]
 };
