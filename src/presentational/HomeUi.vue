@@ -1,6 +1,6 @@
 <template>
   <div>
-    Home Component
+    Home UI
   </div>
 </template>
 
@@ -8,6 +8,6 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'Home',
+  name: 'HomeUi',
 });
 </script>
