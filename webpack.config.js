@@ -1,4 +1,5 @@
 const { VueLoaderPlugin } = require('vue-loader')
+const path = require('path');
 
 module.exports = {
   entry: './src/main.ts',
@@ -29,7 +30,8 @@ module.exports = {
     ],
 
     alias: {
-      vue: "vue/dist/vue.js"
+      vue: "vue/dist/vue.js",
+      "@": path.resolve(__dirname, 'src/')
     }
   },
 
