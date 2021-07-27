@@ -1,22 +1,20 @@
 <template>
   <div>
-    Calendar UI
-    {{ message }}
+    {{ dates }}
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from '@vue/composition-api'
-
+import { defineComponent } from '@vue/composition-api';
+import { getDateOfTargetMonth } from '@/usecases/calendar/getDateOfMonth';
 
 export default defineComponent({
-  // type inference enabled
   name: 'CalendarUi',
 
   setup() {
-    const message = ref<string>('hello world');
+    const dates = getDateOfTargetMonth(2021, 7);
 
-    return { message };
-  }
-})
+    return { dates }
+  },    
+});
 </script>
