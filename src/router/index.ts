@@ -6,8 +6,8 @@ Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
-    path: '/google_calendar_clone',
-    name: 'GoogleCalendarClone',
+    path: '/',
+    name: 'Calendar',
     component: CalendarContainer
   }
 ];
