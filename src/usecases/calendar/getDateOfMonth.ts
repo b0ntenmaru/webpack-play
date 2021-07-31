@@ -1,26 +1,35 @@
 
 
-type DateOfTargetMonth = {
+export type DateOfTargetMonth = {
   year: number;
   month: number;
   day: number;
   dayOfWeek: number;
+  dayOfWeekIndex: number;
 }
 
 /**
  * 指定した月の日付情報を返却する
  */
 export const getDateOfTargetMonth = (year: number, month: number): Array<DateOfTargetMonth> => {
-  const targetDate = new Date(year, month - 1);
-  const lastDay = new Date(targetDate.getFullYear(), targetDate.getMonth(), 0).getDate();
-  
+  const lastDay = new Date(year, month, 0).getDate();
   const dateOfTargetMonth: Array<DateOfTargetMonth> = [];
+
+  let dayOfWeekIndex: number = 0;
   for (let i = 1; i <= lastDay; i++) {
+    const date = new Date(year, month - 1, i);
+
+
+    if (i === 1) {
+      dayOfWeekIndex = date.getDay();
+    }
+
     dateOfTargetMonth.push({
-      year: targetDate.getFullYear(),
-      month: targetDate.getMonth() + 1,
+      year: date.getFullYear(),
+      month: date.getMonth() + 1,
       day: i,
-      dayOfWeek: targetDate.getDay()
+      dayOfWeek: date.getDay(),
+      dayOfWeekIndex: dayOfWeekIndex += 1
     });
   }
   return dateOfTargetMonth;
