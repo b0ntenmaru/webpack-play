@@ -1,15 +1,16 @@
 <template>
-  <HomeUi />
+  <CalendarUi />
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import HomeUi from '@/presentational/HomeUi.vue';
+import CalendarUi from '@/presentational/calendar/CalendarUi.vue';
 
 export default Vue.extend({
-  name: 'HomeContainer',
+  name: 'CalendarContainer',
+
   components: {
-    HomeUi
+    CalendarUi
   },
 });
 </script>

@@ -21,6 +21,17 @@ module.exports = {
         test: /\.vue$/,
         use: 'vue-loader',
       },
+      {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: ['vue-style-loader', 'css-loader', 'sass-loader']
+      }
     ],
   },
 
@@ -30,13 +41,13 @@ module.exports = {
     ],
 
     alias: {
-      vue: "vue/dist/vue.js",
-      "@": path.resolve(__dirname, 'src/')
+      vue: 'vue/dist/vue.js',
+      '@': path.resolve(__dirname, 'src/')
     }
   },
 
   // ES5(IE11等)向けの指定（webpack 5以上で必要）
-  target: ["web", "es5"],
+  target: ['web', 'es5'],
 
   output: {
     path: `${__dirname}/public`,
