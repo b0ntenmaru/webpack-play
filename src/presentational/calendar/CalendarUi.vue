@@ -1,6 +1,6 @@
 <template>
   <div class="calendar-ui">
-    <DateTable />
+    <DateTable :dates="dates" />
   </div>
 </template>
 
@@ -20,6 +20,6 @@ export default defineComponent({
     const dates = getDateOfTargetMonth(2021, 7);
 
     return { dates }
-  },    
+  },
 });
 </script>
